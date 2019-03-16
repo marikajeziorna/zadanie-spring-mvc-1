@@ -4,10 +4,40 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style type="text/css">
+        .title {
+            font-size: 30px;
+            font-family: "Arial Black";
+            padding-left: 50px;
+            padding-top: 50px;
+            padding-bottom: 20px;
+            color: black;
+        }
+        .page{
+            background: orange;
+        }
+        .form-sum{
+            padding-left: 50px;
+            font-family: "Arial Black";
+            font-size: 20px;
+            color: black;
+        }
+        .table{
+            margin-left: 80px;
+            margin-bottom: auto;
+            width: auto;
+            font-family: Arial;
+            font-size: 22px;
+            color: black;
+            border-color: black;
+        }
+
+    </style>
     <title>Table Products List</title>
 </head>
-<body>
-<table class="table" style="width: 300px; margin: auto">
+<body class="page">
+<h1 class="title">Table Products</h1>
+<table class="table">
     <thead>
     <tr>
         <th>Product</th>
@@ -22,6 +52,6 @@
     </tbody>
 </table>
 <br>
-<span th:text="${suma}"></span>
+<span class="form-sum" th:text="${suma}"></span>
 </body>
 </html>

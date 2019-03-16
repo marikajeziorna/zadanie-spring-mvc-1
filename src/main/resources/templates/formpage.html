@@ -1,15 +1,55 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<form action="/formpage" method="post" th:object="${newProduct}">
-    <input type="text" th:field="*{name}"/>
-    <input type="number" th:field="*{price}"/>
-    <input type="submit" value="Add"/>
-</form>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Form page</title>
+    <style type="text/css">
+        .title {
+            font-size: 30px;
+            font-family: "Arial Black";
+            padding-left: 50px;
+            padding-top: 50px;
+            padding-bottom: 20px;
+            color: black;
+        }
+        .form-input{
+            padding-left: 100px;
+            font-family: Arial;
+            font-size: 14px;
+            color: darkgray;
+            border-color: black;
+            margin-left: 10px;
 
+        }
+        .button{
+            font-family: Arial;
+            font-size: 14px;
+            background: black;
+            color: white;
+            border-color: black;
+            margin-left: 10px;
+        }
+        .page{
+            background: bisque;
+        }
+        .form-label{
+            font-family: Arial;
+            font-size: 18px;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body class="page">
+<h1 class="title">Product form creation</h1>
+<form  action="/formpage" method="post" th:object="${newProduct}">
+    <label class="form-label" for="productName">Product Name:</label>
+    <input class="form-input" id="productName" type="text" th:field="*{name}"/>
+    <label class="form-label" for="price">Product Price:</label>
+    <input class="form-input" id="price" type="number" th:field="*{price}"/>
+    <input class="button" type="submit" value="Add"/>
+</form>
+</div>
 </body>
 </html>

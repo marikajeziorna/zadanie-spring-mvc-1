@@ -4,15 +4,41 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style type="text/css">
+        .title {
+            font-size: 30px;
+            font-family: "Arial Black";
+            padding-left: 50px;
+            padding-top: 50px;
+            padding-bottom: 20px;
+            color: black;
+        }
+        .blockList{
+            font-family: Arial;
+            font-size: 22px;
+            color: black;
+            padding-left: 80px;
+            margin-bottom: auto;
+        }
+        .page{
+            background: darkkhaki;
+        }
+        .form-sum{
+            padding-left: 50px;
+            font-family: "Arial Black";
+            font-size: 20px;
+            color: black;
+        }
+    </style>
     <title>Products List </title>
 </head>
-<body>
-<h1 Products List></h1>
-<ul th:each="product: ${productsList}">
-    <li th:text="${product.name}"></li>
+<body class="page">
+<h1 class="title">Products List</h1>
+<ul class="blockList" th:each="product: ${productsList}">
+    <li class="list-view" th:text="${product.name}"></li>
 </ul>
 <br>
-<span th:text="${suma}">
+<span class="form-sum" th:text="${suma}">
 </span>
 </body>
 </html>
