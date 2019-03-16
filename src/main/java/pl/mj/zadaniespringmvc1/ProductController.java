@@ -21,33 +21,44 @@ public class ProductController {
     public double sumPrice(List<Product> productsList) {
         double sum = 0;
         for (Product product : productsList) {
-            sum = +product.getPrice();
+            sum = sum + product.getPrice();
         }
         return sum;
     }
 
+    public String printSum() {
+        String sum = String.valueOf(sumPrice(productsList));
+        return "Products sum: " + sum;
+    }
 
-    @GetMapping("/homepage")
-    public String homePage(Model model) {
-
+    @GetMapping("/formpage")
+    public String formPage(Model model) {
         model.addAttribute("productsList", productsList);
         model.addAttribute("newProduct", new Product());
-        return "productsList";
+        return "formpage";
     }
 
-    @PostMapping("/displayproduct")
+    @PostMapping("/formpage")
     public String add(Product product) {
         productsList.add(product);
-        return "redirect:/homepage";
+        return "redirect:/formpage";
     }
 
-    @PostMapping("/productsum")
-    public String printSum(List<Product> productsList, Model model){
-        double sum = sumPrice(productsList);
-       model.addAttribute("sumPrice", sum);
-return String.valueOf(sum);
+    @GetMapping("/listpage")
+    public String listPage(Model model) {
+        model.addAttribute("productsList", productsList);
+        model.addAttribute("newProduct", new Product());
+        model.addAttribute("suma", printSum());
+        return "listpage";
     }
 
+    @GetMapping("/tablepage")
+    public String tablePage(Model model) {
+        model.addAttribute("productsList", productsList);
+        model.addAttribute("newProduct", new Product());
+        model.addAttribute("suma", printSum());
+        return "tablepage";
+    }
 
 }
 
