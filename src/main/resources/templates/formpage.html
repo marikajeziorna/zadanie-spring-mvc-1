@@ -43,7 +43,7 @@
 </head>
 <body class="page">
 <h1 class="title">Product form creation</h1>
-<form  action="/formpage" method="post" th:object="${newProduct}">
+<form  action="/" method="post" th:object="${newProduct}">
     <label class="form-label" for="productName">Product Name:</label>
     <input class="form-input" id="productName" type="text" th:field="*{name}"/>
     <label class="form-label" for="price">Product Price:</label>

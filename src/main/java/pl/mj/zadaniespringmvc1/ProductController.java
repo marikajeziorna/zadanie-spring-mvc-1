@@ -31,17 +31,17 @@ public class ProductController {
         return "Products sum: " + sum;
     }
 
-    @GetMapping("/formpage")
+    @GetMapping("/")
     public String formPage(Model model) {
         model.addAttribute("productsList", productsList);
         model.addAttribute("newProduct", new Product());
         return "formpage";
     }
 
-    @PostMapping("/formpage")
+    @PostMapping("/")
     public String add(Product product) {
         productsList.add(product);
-        return "redirect:/formpage";
+        return "redirect:/";
     }
 
     @GetMapping("/listpage")
