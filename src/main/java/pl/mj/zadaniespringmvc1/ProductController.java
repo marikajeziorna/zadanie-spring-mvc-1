@@ -44,20 +44,20 @@ public class ProductController {
         return "redirect:/";
     }
 
-    @GetMapping("/listpage")
+    @GetMapping("/lista")
     public String listPage(Model model) {
         model.addAttribute("productsList", productsList);
         model.addAttribute("newProduct", new Product());
         model.addAttribute("suma", printSum());
-        return "listpage";
+        return "lista";
     }
 
-    @GetMapping("/tablepage")
+    @GetMapping("/tabela")
     public String tablePage(Model model) {
         model.addAttribute("productsList", productsList);
         model.addAttribute("newProduct", new Product());
         model.addAttribute("suma", printSum());
-        return "tablepage";
+        return "tabela";
     }
 
 }
